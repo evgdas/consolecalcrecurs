@@ -14,6 +14,6 @@ public class CheckText {
 
     static boolean isRimExpression(String text) {
         Matcher matcherRim = patternRim.matcher(text);
-        return matcherRim.find();
+        return matcherRim.matches();
     }
 }
