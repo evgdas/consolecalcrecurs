@@ -8,10 +8,10 @@ public class AppStart {
 
         if (CheckText.isRightExpression(text)) {
             List<Lexems> lexems = Lexems.textAnalize(text);
-            LexemeBuffer buffer = new LexemeBuffer(lexems);
-            int answer=Calculator.calculate(buffer);
+            LexemeBuffer bufferLexem = new LexemeBuffer(lexems);
+            int answer=Calculator.calculate(bufferLexem);
                 if (CheckText.isRimExpression(text)){
-                    System.out.println("Answer=: "+ConvertNumber.convertIntegerToRoman(answer));
+                    System.out.println("Answer=: "+ConvertNumber.convertArabicToRim(answer));
                 }
                 else {
                     System.out.println("Answer=: "+answer);

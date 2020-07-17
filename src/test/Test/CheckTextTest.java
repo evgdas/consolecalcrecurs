@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
 public class CheckTextTest {
 
     @DataProvider
-    public Object[][] parseExpr() {
+    public Object[][] expr() {
         return new Object[][]{
                 {"1+1", true},
                 {"1-1", true},
@@ -23,15 +23,30 @@ public class CheckTextTest {
         };
     }
 
+    @DataProvider
+    public Object[][] exprRim() {
+        return new Object[][]{
+                {"1+1", false},
+                {"1-1", false},
+                {"1*1",false},
+                {"X+X", true},
+                {"X+1", false}
 
-    @Test(dataProvider = "parseExpr")
+
+        };
+    }
+
+
+    @Test(dataProvider = "expr")
     public void isRightExpressionTest(String expr, boolean expected) {
         boolean actual = CheckText.isRightExpression(expr);
         assertEquals(actual, expected);
     }
 
-    @Test
-    public void isRimExpression() {
+    @Test(dataProvider = "exprRim")
+    public void isRimExpression(String exprRim, boolean expected) {
+        boolean actual = CheckText.isRimExpression(exprRim);
+        assertEquals(actual, expected);
 
     }
 

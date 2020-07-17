@@ -55,7 +55,7 @@ public class Lexems {
                         if (pos>=text.length()){break;}
                         c=text.charAt(pos);
                     }while (c=='I' ||c=='V'||c=='X');
-                    int numberI=ConvertNumber.convertRomanToInt(stringBuilderI.toString());
+                    int numberI=ConvertNumber.convertRimToArabic(stringBuilderI.toString());
                     lexems.add(new Lexems(LexemType.NUMBER, String.valueOf(numberI)));
 
                     continue;
@@ -67,7 +67,7 @@ public class Lexems {
                         if (pos>=text.length()){break;}
                         c=text.charAt(pos);
                     }while (c=='I');
-                    int numberV=ConvertNumber.convertRomanToInt(stringBuilderV.toString());
+                    int numberV=ConvertNumber.convertRimToArabic(stringBuilderV.toString());
                     lexems.add(new Lexems(LexemType.NUMBER, String.valueOf(numberV)));
 
                     continue;

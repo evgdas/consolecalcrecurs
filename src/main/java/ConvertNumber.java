@@ -21,7 +21,7 @@ public class ConvertNumber {
         }
     }
 
-    public static int convertRomanToInt(String romanNumeral) {
+    public static int convertRimToArabic(String romanNumeral) {
         int result = 0;
         for (int i = 0; i < romanNumeral.length(); i++) {
             if (letterToNumber(romanNumeral.charAt(i)) == -1) {
@@ -43,7 +43,7 @@ public class ConvertNumber {
     }
 
 
-    public static String convertIntegerToRoman(int number) {
+    public static String convertArabicToRim(int number) {
         return join("", nCopies(number, "I"))
                 .replace("IIIII", "V")
                 .replace("IIII", "IV")
